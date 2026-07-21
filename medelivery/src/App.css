@@ -14,17 +14,26 @@ body{
 
 nav{
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
     padding:18px 60px;
     background:white;
     box-shadow:0 3px 15px rgba(0,0,0,.08);
     position:sticky;
     top:0;
+    text-decoration:none;
+}
+
+#random
+{
+    text-decoration:none;
 }
 
 nav h2{
     color:#2563EB;
+    display:flex;
+    justify-content:left;
+    align-self:left;
 }
 
 nav ul{
@@ -42,6 +51,25 @@ nav li{
 
 nav li:hover{
     color:#2563EB;
+}
+
+nav a{
+    text-decoration:none;
+    color:#334155;
+}
+
+.navbaritems{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+} 
+
+.logo
+{
+    display:flex;
+    justify-content:left;
+    align-items:left;
+    flex:1;
 }
 
 section{
@@ -67,7 +95,7 @@ section{
 
 .hero button{
     margin-top:30px;
-    background:#2563EB;
+    background:#4b515e;
     color:white;
     border:none;
     padding:14px 30px;
@@ -188,4 +216,10 @@ footer{
     text-align:center;
     padding:25px;
     margin-top:50px;
+}
+
+.pharmacies{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
