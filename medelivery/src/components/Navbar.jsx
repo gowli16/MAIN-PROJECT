@@ -1,19 +1,22 @@
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <nav>
 
-            <div class="logo"><h2>random ahh</h2></div>
+            <div className="logo">
+                <h2>Random Ahh</h2>
+            </div>
 
-            <div class="navbaritems">
+            <div className="navbaritems">
                 <ul>
-                    <li id="random"><a href="/">Home</a></li>
-                    <li><a href="/pharmacies">Pharmacies</a></li>
-                    <li><a href="/delivery">Delivery</a></li>
-                    <li><a href="/cart">Cart</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/pharmacies">Pharmacies</Link></li>
+                    <li><Link to="/cart">Cart</Link></li>
                 </ul>
             </div>
+
         </nav>
     );
-
 }
+
 export default Navbar;

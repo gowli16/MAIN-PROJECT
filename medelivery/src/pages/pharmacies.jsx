@@ -30,6 +30,18 @@ function Pharmacies()
                 <p>Location : </p>
                 <p>Phone : </p>
             </div>
+                        <div>
+                <h2>Pharmacy 5</h2>
+                <img src="pharmacy4.jpg" alt="Pharmacy 4" />
+                <p>Location : </p>
+                <p>Phone : </p>
+            </div>
+                        <div>
+                <h2>Pharmacy 6</h2>
+                <img src="pharmacy4.jpg" alt="Pharmacy 4" />
+                <p>Location : </p>
+                <p>Phone : </p>
+            </div>
         </section>
     );
 }       
