@@ -1,26 +1,20 @@
 function CartItem(props) {
     return (
-        <div className="cart-item">
+        <div className="cartitem">
 
             <img
                 src={props.image}
                 alt={props.name}
-                className="cart-image"
+                className="cartimage"
             />
 
-            <div className="cart-details">
+            <div className="cartdetails">
                 <h3>{props.name}</h3>
                 <p>{props.pharmacy}</p>
                 <p>₹{props.price}</p>
             </div>
 
-            <div className="cart-quantity">
-                <button>-</button>
-                <span>{props.quantity}</span>
-                <button>+</button>
-            </div>
-
-            <div className="cart-total">
+            <div className="carttotal">
                 ₹{props.price * props.quantity}
             </div>
 
