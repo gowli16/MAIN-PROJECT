@@ -223,3 +223,11 @@ footer{
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px;
 }
+
+.card
+{
+    display:flex;
+    flex-direction:column;
+    background-color:blue;
+    color:black;    
+}
