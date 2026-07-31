@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "medicine": "Paracetamol",
+    "brand": "Dolo 650",
+    "category": "Fever",
+    "price": 30,
+    "stock": 50,
+    "pharmacy": "Apollo Pharmacy",
+    "location": "Amritapuri",
+    "phone": "9876543210",
+    "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
+    "quantity":50
+  },
+  {
+    "id": 2,
+    "medicine": "Crocin",
+    "brand": "Crocin",
+    "category": "Fever",
+    "price": 25,
+    "stock": 40,
+    "pharmacy": "MedPlus",
+    "location": "Karunagappally",
+    "phone": "9876543211",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
+    "quantity":50
+  }
+]
+

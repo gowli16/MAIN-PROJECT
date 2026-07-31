@@ -11,7 +11,9 @@ function CartItem(props) {
             <div className="cartdetails">
                 <h3>{props.name}</h3>
                 <p>{props.pharmacy}</p>
-                <p>₹{props.price}</p>
+                <p>{props.price}</p>
+                <p>{props.medicine}</p>
+                <p>Quantity: {props.quantity}</p>
             </div>
 
             <div className="carttotal">

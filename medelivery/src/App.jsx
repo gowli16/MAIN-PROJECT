@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Cart from "./pages/cart";
+import Cart from "./pages/Cart";
 import Pharmacies from "./pages/pharmacies";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
