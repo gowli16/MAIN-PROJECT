@@ -1,13 +1,10 @@
-import CartItem from "../components/cartitem";
+import CartItem from "../components/CartItem";
 
 function Cart(){
     return(
         <section className="cart">
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
+            <CartItem />
+
         </section>
     );
 }

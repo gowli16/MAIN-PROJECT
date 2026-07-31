@@ -1,0 +1,6 @@
+id,medicine,brand,category,price,stock,pharmacy,location,phone,image
+1,Paracetamol,Dolo 650,Fever,30,50,Apollo Pharmacy,Amritapuri,9876543210,https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg
+2,Crocin,Crocin,Fever,25,40,MedPlus,Karunagappally,9876543211,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10
+3,Cetirizine,Cetzine,Allergy,45,35,Apollo Pharmacy,Amritapuri,9876543210,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPdaHn_DBaxUjXHhhZKYmdQrx00tsfiFF4eadN2wFiKQ&s=10
+4,Vitamin C,Limcee,Supplements,180,20,HealthCare Pharmacy,Kollam,9876543212,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRktVb1ohEPuvLoCvJVVOiROFAMjpykSss3O15-NrV3782SPpn3W8X6dCE&s=10
+5,Amoxicillin,Mox,Antibiotic,120,15,City Pharmacy,Kayamkulam,9876543213,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7gDhuJ6jhdh5e-H1EdLYxmeDtec_lDRcHE6M1f0CunA&s=10
