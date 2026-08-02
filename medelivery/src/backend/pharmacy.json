@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "Name" : "the skibidi pharmacy",
+        "Address" : "123 Main St, Skibidi City",
+        "Phone" : "(123) 456-7890"
+    },
+    {
+        "id":2,
+        "Name" : "something pharmacy",
+        "Address" : "456 Oak Ave, Skibidi City",
+        "Phone" : "(987) 654-3210"
+    }
+]

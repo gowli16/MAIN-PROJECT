@@ -1,7 +1,11 @@
 import CartItem from "../components/CartItem";
 import medicines from "../backend/medicines.json";
+import { Fragment } from "react";
+import Navbar from "../components/Navbar";
 function Cart() {
     return (
+        <Fragment>
+        <Navbar/>
         <section className="cart">
             {medicines.map((item) => (
                 <CartItem
@@ -12,7 +16,9 @@ function Cart() {
                     quantity={item.quantity}
                 />
             ))}
+        
         </section>
+        </Fragment>
     );
 }
 

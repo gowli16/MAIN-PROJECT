@@ -1,7 +1,9 @@
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cart from "./pages/Cart";
 import Pharmacies from "./pages/pharmacies";
+import Login from "./pages/Login";
+import Admin from "./pages/admin";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -9,9 +11,11 @@ import "./App.css";
 function App() {
     return (
         <BrowserRouter>
-            <Navbar />
+            {/* <Navbar/> */}
             <Routes>
-                <Route path="/" element={<Hero />} />
+                <Route path="/" element={<Login />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/hero" element={<Hero />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/pharmacies" element={<Pharmacies />} />
             </Routes>
