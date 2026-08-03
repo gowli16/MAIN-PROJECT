@@ -11,10 +11,10 @@ function Pharmacies() {
             {pharmacy.map((item) => (
                 <PharmacyCard
                     key={item.id}
-                    name={item.Name}
-                    address={item.Address}
-                    phone={item.Phone}
-                />
+                    name={item.name}
+                    address={item.address}
+                    phone={item.phone}
+/>
             ))}
         </section>
         </Fragment>

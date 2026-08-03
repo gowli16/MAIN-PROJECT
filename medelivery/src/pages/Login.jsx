@@ -63,7 +63,9 @@ function Login()
                 <button type="submit">Login</button>
                 <br/>
                 <h3 style={{ color: 'grey' }}>Dont have an account? SIGN up below</h3>
-                <button type="submit">Sign Up</button>
+                <button type="button" onClick={() => navigate("/signup")}>
+                Sign Up
+                </button>
             </form>
             </div> 
             {/* <div className="logindiv">

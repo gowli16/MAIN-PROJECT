@@ -1,14 +1,62 @@
 [
     {
-        "id":1,
-        "Name" : "the skibidi pharmacy",
-        "Address" : "123 Main St, Skibidi City",
-        "Phone" : "(123) 456-7890"
+        "id": 1,
+        "name": "Apollo Pharmacy",
+        "address": "Amritapuri Main Road, Vallikavu",
+        "phone": "9876543210"
     },
     {
-        "id":2,
-        "Name" : "something pharmacy",
-        "Address" : "456 Oak Ave, Skibidi City",
-        "Phone" : "(987) 654-3210"
+        "id": 2,
+        "name": "MedPlus Pharmacy",
+        "address": "Karunagappally Town",
+        "phone": "9876543211"
+    },
+    {
+        "id": 3,
+        "name": "City Care Pharmacy",
+        "address": "Chavara Junction",
+        "phone": "9876543212"
+    },
+    {
+        "id": 4,
+        "name": "HealthCare Pharmacy",
+        "address": "Kayamkulam Market Road",
+        "phone": "9876543213"
+    },
+    {
+        "id": 5,
+        "name": "LifeCare Medicals",
+        "address": "Oachira Bus Stand",
+        "phone": "9876543214"
+    },
+    {
+        "id": 6,
+        "name": "Good Health Pharmacy",
+        "address": "Amritapuri Beach Road",
+        "phone": "9876543215"
+    },
+    {
+        "id": 7,
+        "name": "Amma Medicals",
+        "address": "Near Amrita Hospital, Amritapuri",
+        "phone": "9876543216"
+    },
+    {
+        "id": 8,
+        "name": "Green Cross Pharmacy",
+        "address": "Clappana Junction",
+        "phone": "9876543217"
+    },
+    {
+        "id": 9,
+        "name": "Wellness Pharmacy",
+        "address": "Neendakara Road, Kollam",
+        "phone": "9876543218"
+    },
+    {
+        "id": 10,
+        "name": "CarePoint Medicals",
+        "address": "Karunagappally Railway Station Road",
+        "phone": "9876543219"
     }
 ]

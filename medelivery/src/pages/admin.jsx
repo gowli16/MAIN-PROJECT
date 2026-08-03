@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Fragment from "react";
+//import Fragment from "react";
 function Admin(){
 
     const [approved,setApproved]=useState(false);
 
     return(
-        <Fragment>
-            <Navbar/>
+        <>
+        <Navbar/>
         <section className="adminMain">
             <h1>Admin Dashboard</h1>
             <h2>Pending Upload</h2>
@@ -19,7 +19,7 @@ function Admin(){
             }
 
         </section>
-        </Fragment>
+        </>
 
     );
 
