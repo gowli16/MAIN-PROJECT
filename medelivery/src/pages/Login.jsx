@@ -12,14 +12,19 @@ function Login()
         e.preventDefault();
         const users = [
         {
-            username: "admin",
-            password: "admin123",
+            username:"admin",
+            password:"admin123",
             page: "/admin"
         },
         {
-            username: "gowli",
-            password: "1234",
+            username:"gowli",
+            password:"1234",
             page: "/hero"
+        },
+        {
+            username:"pharmacy",
+            password:"smt",
+            page: "/Pharmacyside"
         }
         ];
         const user = users.find(
