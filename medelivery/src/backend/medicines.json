@@ -24,6 +24,72 @@
     "phone": "9876543211",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
     "quantity":50
+  },
+  {
+    "id":3,
+    "medicine": "Amoxicillin",
+    "brand": "Amoxil",
+    "category": "Antibiotic",
+    "price": 50,
+    "stock": 30,
+    "pharmacy": "Apollo Pharmacy",
+    "location": "Amritapuri",
+    "phone": "9876543210",
+    "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
+    "quantity":50
+  },
+  {
+    "id":4,
+    "medicine": "Ibuprofen",
+    "brand": "Brufen",
+    "category": "Pain Relief",
+    "price": 40,
+    "stock": 20,
+    "pharmacy": "MedPlus",
+    "location": "Karunagappally",
+    "phone": "9876543211",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
+    "quantity":50
+  },
+  {
+    "id":5,
+    "medicine": "Omeprazole",
+    "brand": "Omez",
+    "category": "Antacid",
+    "price": 60,
+    "stock": 25,
+    "pharmacy": "Apollo Pharmacy",
+    "location": "Amritapuri",
+    "phone": "9876543210",
+    "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
+    "quantity":50
+  },
+  {
+    "id":6,
+    "medicine": "Cetirizine",
+    "brand": "Cetzine",
+    "category": "Allergy",
+    "price": 35,
+    "stock": 15,
+    "pharmacy": "MedPlus",
+    "location": "Karunagappally",
+    "phone": "9876543211",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
+    "quantity":50
+  },
+  {
+    "id":7,
+    "medicine": "Loratadine",
+    "brand": "Claritin",
+    "category": "Allergy",
+    "price": 45,
+    "stock": 20,
+    "pharmacy": "Apollo Pharmacy",
+    "location": "Amritapuri",
+    "phone": "9876543210",
+    "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
+    "quantity":50
   }
+
 ]
 

@@ -451,3 +451,15 @@ input[type="file"]::file-selector-button {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
+.btn
+{
+    margin-left:-10px;
+}
+
+.cimg
+{
+    height:200px;
+    width:200px;
+    margin-left:-30px;
+}

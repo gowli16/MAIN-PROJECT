@@ -1,9 +1,7 @@
-import {Fragment} from "react";
-import Navbar from "../components/Navbar";
+
 function Signup() {
   return (
-    <Fragment>
-    <Navbar/>
+
     <section className="loginmain">
       <div className="login">
             <h1 >Welcome to McDelivery</h1>
@@ -20,7 +18,6 @@ function Signup() {
             </form>
       </div>
       </section>
-    </Fragment>
   );
 }
 

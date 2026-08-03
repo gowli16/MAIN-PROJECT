@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import Navbar from "../components/Navbar";
+
 function Pharmacyside() {
 
     const [file, setFile] = useState(null);
@@ -15,7 +15,7 @@ function Pharmacyside() {
 
     return(
     <Fragment>
-        <Navbar/>
+
         <section className="pharmacyside">
 
             <h1>Pharmacy Dashboard</h1>
