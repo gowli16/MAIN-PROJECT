@@ -3,7 +3,6 @@ import SearchBar from "./SearchBar";
 import Productlist from "./Productlist";
 import { Fragment } from "react";
 function Hero(){
-
     return(
         <Fragment>
         <section className="hero">

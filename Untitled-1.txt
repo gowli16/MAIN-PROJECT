@@ -1,0 +1,21 @@
+import React from "react";
+
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <h2>MediCare Pharmacy</h2>
+
+      <input
+        type="text"
+        placeholder="Search medicines..."
+        className="search-bar"
+      />
+
+      <button className="cart-btn">
+        Cart 🛒
+      </button>
+    </nav>
+  );
+}
+
+export default Navbar;

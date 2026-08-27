@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -44,8 +44,7 @@ function Login()
 }
     return(
         <Fragment>
-        <Navbar/>
-
+  
         <section className="loginmain">
             <div className="login">
             <h1>Welcome back to McDelivery</h1>
