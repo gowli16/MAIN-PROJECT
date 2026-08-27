@@ -1,46 +1,126 @@
-import CartItem from "../components/CartItem";
-import medicines from "../backend/medicines.json";
-import { Fragment } from "react";
-
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/useCart";
 
 function Cart() {
+
     const navigate = useNavigate();
 
-    const total = medicines.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
-    );
+    const {
+        cart,
+        increaseQuantity,
+        decreaseQuantity,
+        removeFromCart,
+        clearCart,
+        total
+    } = useCart();
+
+    if (cart.length === 0) {
+
+        return (
+            <div className="cart-page">
+
+                <h2>Your Cart</h2>
+
+                <p>Your cart is empty.</p>
+
+            </div>
+        );
+    }
 
     return (
-        <Fragment>
+        <div className="cart-page">
 
-            <section className="cart">
-                {medicines.map((item) => (
-                    <CartItem
+            <h2>Your Cart</h2>
+
+            <div className="cart-items">
+
+                {cart.map((item) => (
+
+                    <div
+                        className="cart-item"
                         key={item.id}
-                        image={item.image}
-                        name={item.medicine}
-                        pharmacy={item.pharmacy}
-                        price={item.price}
-                        quantity={item.quantity}
-                    />
+                    >
+
+                        <img
+                            src={item.image}
+                            alt={item.medicine}
+                        />
+
+                        <div className="cart-item-info">
+
+                            <h3>
+                                {item.medicine}
+                            </h3>
+
+                            <p>
+                                {item.brand}
+                            </p>
+
+                            <p>
+                                ₹{item.price}
+                            </p>
+
+                            <div className="quantity-controls">
+
+                                <button
+                                    onClick={() =>
+                                        decreaseQuantity(item.id)
+                                    }
+                                >
+                                    -
+                                </button>
+
+                                <span>
+                                    {item.quantity}
+                                </span>
+
+                                <button
+                                    onClick={() =>
+                                        increaseQuantity(item.id)
+                                    }
+                                >
+                                    +
+                                </button>
+
+                            </div>
+
+                            <button
+                                onClick={() =>
+                                    removeFromCart(item.id)
+                                }
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </div>
+
                 ))}
 
-                <div className="total">
-                    <h2>Total: ₹{total}</h2>
+            </div>
 
-                    <button
-                        className="btn"
-                        onClick={() =>
-                            navigate("/Checkout", { state: { total } })
-                        }
-                    >
-                        Checkout
-                    </button>
-                </div>
-            </section>
-        </Fragment>
+            <div className="cart-summary">
+
+                <h3>
+                    Total: ₹{total}
+                </h3>
+
+                <button onClick={clearCart}>
+                    Clear Cart
+                </button>
+
+                <button
+                    onClick={() =>
+                        navigate("/checkout")
+                    }
+                >
+                    Proceed to Checkout
+                </button>
+
+            </div>
+
+        </div>
     );
 }
 

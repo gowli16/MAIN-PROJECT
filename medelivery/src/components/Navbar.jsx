@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../context/useCart";
+
 function Navbar() {
+
+    const { cartCount } = useCart();
+
     return (
+
         <nav>
 
             <div className="logo">
@@ -8,14 +14,33 @@ function Navbar() {
             </div>
 
             <div className="navbaritems">
+
                 <ul>
-                    <li><Link to="/hero">Home</Link></li>
-                    <li><Link to="/pharmacies">Pharmacies</Link></li>
-                    <li><Link to="/cart">Cart</Link></li>
+
+                    <li>
+                        <Link to="/hero">
+                            Home
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/pharmacies">
+                            Pharmacies
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/cart">
+                            Cart ({cartCount})
+                        </Link>
+                    </li>
+
                 </ul>
+
             </div>
 
         </nav>
+
     );
 }
 
