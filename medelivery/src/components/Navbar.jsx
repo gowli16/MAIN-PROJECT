@@ -10,7 +10,7 @@ function Navbar() {
         <nav>
 
             <div className="logo">
-                <h2>Random Ahh</h2>
+                <h2>McMedicine</h2>
             </div>
 
             <div className="navbaritems">

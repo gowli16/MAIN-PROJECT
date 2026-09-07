@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import pharmacyImage from "../assets/pharmacy1.png";
 function Login() {
 
     const navigate = useNavigate();
@@ -8,16 +8,13 @@ function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async (e) => {
+    async function handleLogin(e) {
 
         e.preventDefault();
 
         if (!username || !password) {
-
-            alert("Please enter your username and password.");
-
+            alert("Please enter username and password.");
             return;
-
         }
 
         try {
@@ -26,11 +23,9 @@ function Login() {
                 "http://localhost:5000/login",
                 {
                     method: "POST",
-
                     headers: {
                         "Content-Type": "application/json"
                     },
-
                     body: JSON.stringify({
                         username: username,
                         password: password
@@ -38,58 +33,51 @@ function Login() {
                 }
             );
 
-
             const data = await response.json();
 
+            if (response.ok) {
 
-            if (!response.ok) {
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(data)
+                );
 
-                alert(data.message || "Invalid username or password.");
+                if (data.username === "admin") {
 
-                return;
+                    navigate("/admin");
 
-            }
+                } else if (data.username === "pharmacy") {
 
+                    navigate("/Pharmacyside");
 
-            // Save logged-in user
-            localStorage.setItem(
-                "user",
-                JSON.stringify(data)
-            );
+                } else {
 
+                    navigate("/hero");
 
-            // Redirect according to user role
-            if (data.role === "admin") {
+                }
 
-                navigate("/admin");
+            } else {
 
-            }
-
-            else if (data.role === "pharmacy") {
-
-                navigate("/Pharmacyside");
-
-            }
-
-            else {
-
-                navigate("/hero");
+                alert(
+                    data.message ||
+                    "Invalid username or password"
+                );
 
             }
-
 
         } catch (error) {
 
-            console.error("Login error:", error);
+            console.error(
+                "Login error:",
+                error
+            );
 
             alert(
                 "Unable to connect to the server."
             );
 
         }
-
-    };
-
+    }
 
     return (
 
@@ -97,88 +85,76 @@ function Login() {
 
             <section className="loginmain">
 
+                {/* LEFT SIDE - LOGIN */}
                 <div className="login">
 
                     <h1>
-                        Welcome back to McDelivery
+                        Welcome back to
+                        <br />
+                        McMedicine
                     </h1>
 
                     <h2>
                         Login to your existing account :)
                     </h2>
 
-
                     <form onSubmit={handleLogin}>
 
                         <input
-
                             type="text"
-
                             placeholder="Username"
-
                             value={username}
-
                             onChange={(e) =>
                                 setUsername(e.target.value)
                             }
-
                         />
 
-                        <br />
-
-
                         <input
-
                             type="password"
-
                             placeholder="Password"
-
                             value={password}
-
                             onChange={(e) =>
                                 setPassword(e.target.value)
                             }
-
                         />
-
-                        <br />
-
 
                         <button type="submit">
                             Login
                         </button>
 
-                        <br />
-
-
-                        <h3 style={{ color: "grey" }}>
+                        <h3>
                             Dont have an account? SIGN up below
                         </h3>
 
-
                         <button
-
                             type="button"
-
                             onClick={() =>
                                 navigate("/signup")
                             }
-
                         >
                             Sign Up
-
                         </button>
 
                     </form>
 
                 </div>
 
+
+                {/* RIGHT SIDE - IMAGE */}
+                <div className="login-image-container">
+
+                    <img
+                        className="loginimg"
+                        src={pharmacyImage}
+                        alt="Pharmacy medicine"
+                    />
+
+                </div>
+
             </section>
 
         </Fragment>
-
     );
-
 }
 
 export default Login;

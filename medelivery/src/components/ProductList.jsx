@@ -1,128 +1,143 @@
 import { useEffect, useState } from "react";
-
 import ProductCard from "./ProductCard";
-
 import SearchBar from "./SearchBar";
 
 function ProductList() {
 
     const [medicines, setMedicines] = useState([]);
-
     const [searchTerm, setSearchTerm] = useState("");
-
     const [selectedCategory, setSelectedCategory] = useState("All");
-
     const [loading, setLoading] = useState(true);
 
-    const [error, setError] = useState("");
 
+    // ========================================
+    // GET MEDICINES FROM BACKEND
+    // ========================================
 
     useEffect(() => {
 
-        fetch("http://localhost:5000/medicines")
+        async function loadMedicines() {
 
-            .then((response) => {
+            try {
 
-                if (!response.ok) {
-                    throw new Error("Failed to fetch medicines");
+                const response = await fetch(
+                    "http://localhost:5000/medicines"
+                );
+
+                const data = await response.json();
+
+                if (response.ok) {
+
+                    setMedicines(data);
+
+                } else {
+
+                    console.log(
+                        "Error loading medicines:",
+                        data
+                    );
+
                 }
 
-                return response.json();
+            } catch (error) {
 
-            })
+                console.error(
+                    "Error fetching medicines:",
+                    error
+                );
 
-            .then((data) => {
+            }
 
-                setMedicines(data);
+            setLoading(false);
 
-                setLoading(false);
+        }
 
-            })
-
-            .catch((error) => {
-
-                console.error("Error:", error);
-
-                setError("Unable to load medicines.");
-
-                setLoading(false);
-
-            });
+        loadMedicines();
 
     }, []);
 
 
+    // ========================================
+    // CREATE CATEGORY LIST
+    // ========================================
+
     const categories = [
-
         "All",
-
         ...new Set(
-            medicines.map((medicine) => medicine.category)
+            medicines.map(
+                (medicine) => medicine.category
+            )
         )
-
     ];
 
 
-    const filteredMedicines = medicines.filter((medicine) => {
+    // ========================================
+    // FILTER MEDICINES
+    // ========================================
 
-        const matchesSearch =
+    const filteredMedicines = medicines.filter(
+        (medicine) => {
 
-            medicine.medicine
-                .toLowerCase()
-                .includes(searchTerm.toLowerCase()) ||
+            const matchesSearch =
+                medicine.medicine
+                    .toLowerCase()
+                    .includes(
+                        searchTerm.toLowerCase()
+                    ) ||
 
-            medicine.brand
-                .toLowerCase()
-                .includes(searchTerm.toLowerCase());
-
-
-        const matchesCategory =
-
-            selectedCategory === "All" ||
-
-            medicine.category === selectedCategory;
+                medicine.brand
+                    .toLowerCase()
+                    .includes(
+                        searchTerm.toLowerCase()
+                    );
 
 
-        return matchesSearch && matchesCategory;
+            const matchesCategory =
+                selectedCategory === "All" ||
+                medicine.category === selectedCategory;
 
-    });
 
+            return (
+                matchesSearch &&
+                matchesCategory
+            );
+
+        }
+    );
+
+
+    // ========================================
+    // LOADING
+    // ========================================
 
     if (loading) {
 
         return (
+
             <section className="medicine-section">
 
-                <h2>Popular Medicines</h2>
-
-                <p>Loading medicines...</p>
+                <h2>
+                    Loading medicines...
+                </h2>
 
             </section>
+
         );
 
     }
 
 
-    if (error) {
-
-        return (
-            <section className="medicine-section">
-
-                <h2>Popular Medicines</h2>
-
-                <p>{error}</p>
-
-            </section>
-        );
-
-    }
-
+    // ========================================
+    // DISPLAY
+    // ========================================
 
     return (
 
         <section className="medicine-section">
 
-            <h2>Popular Medicines</h2>
+            <h2>
+                Popular Medicines
+            </h2>
 
 
             <SearchBar
@@ -131,43 +146,52 @@ function ProductList() {
             />
 
 
+            {/* CATEGORY BUTTONS */}
+
             <div className="category-filter">
 
-                {categories.map((category) => (
+                {categories.map(
+                    (category) => (
 
-                    <button
+                        <button
+                            key={category}
 
-                        key={category}
+                            className={
+                                selectedCategory === category
+                                    ? "category-button active"
+                                    : "category-button"
+                            }
 
-                        className={
-                            selectedCategory === category
-                                ? "category-button active"
-                                : "category-button"
-                        }
+                            onClick={() =>
+                                setSelectedCategory(
+                                    category
+                                )
+                            }
+                        >
 
-                        onClick={() =>
-                            setSelectedCategory(category)
-                        }
+                            {category}
 
-                    >
+                        </button>
 
-                        {category}
-
-                    </button>
-
-                ))}
+                    )
+                )}
 
             </div>
 
+
+            {/* MEDICINES */}
 
             {filteredMedicines.length === 0 ? (
 
                 <div className="no-results">
 
-                    <h3>No medicines found</h3>
+                    <h3>
+                        No medicines found
+                    </h3>
 
                     <p>
-                        Try another medicine or category.
+                        Try another medicine
+                        or category.
                     </p>
 
                 </div>
@@ -176,17 +200,16 @@ function ProductList() {
 
                 <div className="products">
 
-                    {filteredMedicines.map((medicine) => (
+                    {filteredMedicines.map(
+                        (medicine) => (
 
-                        <ProductCard
+                            <ProductCard
+                                key={medicine.id}
+                                medicine={medicine}
+                            />
 
-                            key={medicine.id}
-
-                            medicine={medicine}
-
-                        />
-
-                    ))}
+                        )
+                    )}
 
                 </div>
 

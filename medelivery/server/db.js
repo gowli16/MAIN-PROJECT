@@ -11,3 +11,6 @@ const pool = new Pool({
 });
 
 module.exports = pool;
+
+//What this part of the code does that it connects to postgres database
+//

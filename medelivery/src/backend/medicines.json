@@ -9,8 +9,8 @@
     "pharmacy": "Apollo Pharmacy",
     "location": "Amritapuri",
     "phone": "9876543210",
-    "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
-    "quantity":50
+    "image": "https://www.abibapharmacia.com/wp-content/uploads/2022/08/Diptamp-500-Tab.jpg",
+    "quantity": 50
   },
   {
     "id": 2,
@@ -19,14 +19,14 @@
     "category": "Fever",
     "price": 25,
     "stock": 40,
-    "pharmacy": "MedPlus",
+    "pharmacy": "MedPlus Pharmacy",
     "location": "Karunagappally",
     "phone": "9876543211",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
-    "quantity":50
+    "image": "https://images.apollo247.in/pub/media/catalog/product/c/r/cro0007_1.jpg",
+    "quantity": 50
   },
   {
-    "id":3,
+    "id": 3,
     "medicine": "Amoxicillin",
     "brand": "Amoxil",
     "category": "Antibiotic",
@@ -36,23 +36,23 @@
     "location": "Amritapuri",
     "phone": "9876543210",
     "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
-    "quantity":50
+    "quantity": 50
   },
   {
-    "id":4,
+    "id": 4,
     "medicine": "Ibuprofen",
     "brand": "Brufen",
     "category": "Pain Relief",
     "price": 40,
     "stock": 20,
-    "pharmacy": "MedPlus",
+    "pharmacy": "MedPlus Pharmacy",
     "location": "Karunagappally",
     "phone": "9876543211",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
-    "quantity":50
+    "quantity": 50
   },
   {
-    "id":5,
+    "id": 5,
     "medicine": "Omeprazole",
     "brand": "Omez",
     "category": "Antacid",
@@ -62,23 +62,23 @@
     "location": "Amritapuri",
     "phone": "9876543210",
     "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
-    "quantity":50
+    "quantity": 50
   },
   {
-    "id":6,
+    "id": 6,
     "medicine": "Cetirizine",
     "brand": "Cetzine",
     "category": "Allergy",
     "price": 35,
     "stock": 15,
-    "pharmacy": "MedPlus",
+    "pharmacy": "MedPlus Pharmacy",
     "location": "Karunagappally",
     "phone": "9876543211",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvnSaSK1Wjwfto68Yvp8I2BGf9E-Oc0FeD02o_JtPkCIqf8dLRqfTgJoQ&s=10",
-    "quantity":50
+    "quantity": 50
   },
   {
-    "id":7,
+    "id": 7,
     "medicine": "Loratadine",
     "brand": "Claritin",
     "category": "Allergy",
@@ -88,8 +88,6 @@
     "location": "Amritapuri",
     "phone": "9876543210",
     "image": "https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-PYREGEM-TAB-1-scaled.jpg",
-    "quantity":50
+    "quantity": 50
   }
-
 ]
-
