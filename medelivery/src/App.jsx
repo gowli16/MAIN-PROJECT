@@ -7,7 +7,9 @@ import Admin from "./pages/admin";
 import Signup from "./pages/Signup";
 import PharmacySide from "./pages/PharmacySide";
 import Checkout from "./pages/Checkout";
+import PharmacyMedicines from "./pages/PharmacyMedicines";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 import "./App.css";
 
@@ -24,6 +26,7 @@ function App() {
                 <Route path="/pharmacies" element={<Pharmacies />} />
                 <Route path="/Checkout" element={<Checkout />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/pharmacy/:id" element={<PharmacyMedicines />} />
             </Routes>
         </BrowserRouter>        
     );

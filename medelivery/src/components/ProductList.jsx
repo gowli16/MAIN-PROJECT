@@ -10,9 +10,7 @@ function ProductList() {
     const [loading, setLoading] = useState(true);
 
 
-    // ========================================
-    // GET MEDICINES FROM BACKEND
-    // ========================================
+// retrieves the medicines from the backend
 
     useEffect(() => {
 
@@ -56,11 +54,6 @@ function ProductList() {
 
     }, []);
 
-
-    // ========================================
-    // CREATE CATEGORY LIST
-    // ========================================
-
     const categories = [
         "All",
         ...new Set(
@@ -69,11 +62,7 @@ function ProductList() {
             )
         )
     ];
-
-
-    // ========================================
-    // FILTER MEDICINES
-    // ========================================
+//filers medicine
 
     const filteredMedicines = medicines.filter(
         (medicine) => {
@@ -106,10 +95,6 @@ function ProductList() {
     );
 
 
-    // ========================================
-    // LOADING
-    // ========================================
-
     if (loading) {
 
         return (
@@ -126,10 +111,6 @@ function ProductList() {
 
     }
 
-
-    // ========================================
-    // DISPLAY
-    // ========================================
 
     return (
 

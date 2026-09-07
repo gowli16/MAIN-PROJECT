@@ -6,8 +6,6 @@ function Pharmacies() {
     const [pharmacies, setPharmacies] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
-    // Get pharmacies from the backend
     useEffect(() => {
 
         fetch("http://localhost:5000/pharmacies")
@@ -17,7 +15,6 @@ function Pharmacies() {
             .then((data) => {
 
                 setPharmacies(data);
-
                 setLoading(false);
 
             })
@@ -35,8 +32,6 @@ function Pharmacies() {
 
     }, []);
 
-
-    // Loading message
     if (loading) {
 
         return (
@@ -51,7 +46,6 @@ function Pharmacies() {
 
     }
 
-
     return (
 
         <Fragment>
@@ -63,6 +57,8 @@ function Pharmacies() {
                     <PharmacyCard
 
                         key={item.id}
+
+                        id={item.id}
 
                         name={item.name}
 

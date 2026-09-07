@@ -995,3 +995,34 @@ input[type="file"]::file-selector-button:hover {
 .search-bar input:focus {
     border-color: #9D7272;
 }
+
+.pharmacy-medicine-page {
+    background-color: rgb(24, 24, 74);
+    color: white;
+    min-height: calc(100vh - 80px);
+    padding: 50px 8%;
+}
+
+.pharmacy-medicine-page h1 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.pharmacy-medicine-page .search-bar {
+    margin-bottom: 40px;
+}
+
+.pharmacy-medicine-page .products {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .pharmacy-medicine-page {
+        padding: 35px 5%;
+    }
+
+    .pharmacy-medicine-page h1 {
+        font-size: 28px;
+    }
+}

@@ -9,11 +9,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-
-// ========================================
-// TEST SERVER + DATABASE
-// ========================================
-
 app.get("/", async (req, res) => {
     try {
 
@@ -36,10 +31,7 @@ app.get("/", async (req, res) => {
     }
 });
 
-
-// ========================================
-// GET ALL USERS
-// ========================================
+//from this part we get the users like the registered ones from the DB
 
 app.get("/users", async (req, res) => {
     try {
@@ -61,9 +53,7 @@ app.get("/users", async (req, res) => {
 });
 
 
-// ========================================
-// LOGIN
-// ========================================
+// this part authenticates the login and checks if the user exists and shi
 
 app.post("/login", async (req, res) => {
     try {
@@ -107,10 +97,7 @@ app.post("/login", async (req, res) => {
     }
 });
 
-
-// ========================================
-// GET MEDICINES
-// ========================================
+// this part gets the medicines from the db and sends em to the frontend
 
 app.get("/medicines", async (req, res) => {
     try {
@@ -165,9 +152,7 @@ app.get("/medicines", async (req, res) => {
     }
 });
 
-// ========================================
-// GET MEDICINES FOR ONE PHARMACY
-// ========================================
+// this is for getting medicines of a specific pharmacy  
 
 app.get("/pharmacy/:pharmacy_id/medicines", async (req, res) => {
 
@@ -217,9 +202,7 @@ app.get("/pharmacy/:pharmacy_id/medicines", async (req, res) => {
 
 });
 
-// ========================================
-// GET ALL PHARMACIES
-// ========================================
+// here we select all of the pharmacies that i have in my db
 
 app.get("/pharmacies", async (req, res) => {
     try {
@@ -245,9 +228,7 @@ app.get("/pharmacies", async (req, res) => {
 });
 
 
-// ========================================
-// PLACE ORDER
-// ========================================
+// here we check the order and cart details
 
 app.post("/orders", async (req, res) => {
 
@@ -262,7 +243,7 @@ app.post("/orders", async (req, res) => {
         const items = req.body.items;
 
 
-        // Check cart
+        // checks if the current cart is empty or not
 
         if (!items || items.length === 0) {
 
@@ -272,14 +253,11 @@ app.post("/orders", async (req, res) => {
         }
 
 
-        // Start transaction
+        // this part marks the start of the transaction  
 
         await client.query("BEGIN");
 
-
-        // ========================================
-        // CHECK STOCK
-        // ========================================
+        // this part checks the stock if its available or not 
 
         for (let i = 0; i < items.length; i++) {
 
@@ -296,7 +274,7 @@ app.post("/orders", async (req, res) => {
             );
 
 
-            // Medicine does not exist
+            // if there is no medicine available an exception is thrown 
 
             if (result.rows.length === 0) {
 
@@ -311,7 +289,7 @@ app.post("/orders", async (req, res) => {
             const stock = result.rows[0].stock;
 
 
-            // Not enough stock
+            // the stock is low and we should re stock
 
             if (stock < item.quantity) {
 
@@ -323,9 +301,7 @@ app.post("/orders", async (req, res) => {
         }
 
 
-        // ========================================
-        // CREATE ORDER
-        // ========================================
+        // creates an order from the user's side.
 
         const orderResult = await client.query(
             `
@@ -354,9 +330,7 @@ app.post("/orders", async (req, res) => {
         const order = orderResult.rows[0];
 
 
-        // ========================================
-        // ADD ORDER ITEMS
-        // ========================================
+        // we add the items to the order and reduce the stock of the medicines
 
         for (let i = 0; i < items.length; i++) {
 
@@ -383,9 +357,7 @@ app.post("/orders", async (req, res) => {
             );
 
 
-            // ========================================
-            // REDUCE STOCK
-            // ========================================
+            // this part specifically reduces the desired stock
 
             await client.query(
                 `
@@ -403,7 +375,7 @@ app.post("/orders", async (req, res) => {
         }
 
 
-        // Complete transaction
+        // sends a success message to the frontend if the order is placed successfully
 
         await client.query("COMMIT");
 
@@ -435,10 +407,7 @@ app.post("/orders", async (req, res) => {
     }
 });
 
-
-// ========================================
-// UPLOAD MEDICINES
-// ========================================
+// for the pharmacies to upload their medicines in bulk
 
 app.post("/upload-medicines", async (req, res) => {
 
@@ -450,7 +419,7 @@ app.post("/upload-medicines", async (req, res) => {
         const pharmacy_id = req.body.pharmacy_id;
 
 
-        // Check pharmacy ID
+        // checks if the pharmacy id is present or not
 
         if (!pharmacy_id) {
 
@@ -460,7 +429,7 @@ app.post("/upload-medicines", async (req, res) => {
         }
 
 
-        // Check medicines
+        // checks if the medicines are present or not 
 
         if (!medicines || medicines.length === 0) {
 
@@ -475,9 +444,7 @@ app.post("/upload-medicines", async (req, res) => {
         await client.query("BEGIN");
 
 
-        // ========================================
-        // ADD MEDICINES
-        // ========================================
+        // pharmacy people add medicines in bulk and this part of the code inserts them into the DB
 
         for (let i = 0; i < medicines.length; i++) {
 
@@ -511,9 +478,6 @@ app.post("/upload-medicines", async (req, res) => {
             );
         }
 
-
-        // Complete transaction
-
         await client.query("COMMIT");
 
 
@@ -541,13 +505,9 @@ app.post("/upload-medicines", async (req, res) => {
         client.release();
     }
 });
+// starts the main server
 
-
-// ========================================
-// START SERVER
-// ========================================
-
-// Get medicines belonging to a pharmacy
+// Get medicines belonging to a specific pharmacy by pharmacy ID
 app.get("/pharmacy/:id/medicines", async (req, res) => {
     const pharmacyId = req.params.id;
 

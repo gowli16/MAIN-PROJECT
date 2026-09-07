@@ -80,14 +80,9 @@ function Login() {
     }
 
     return (
-
         <Fragment>
-
             <section className="loginmain">
-
-                {/* LEFT SIDE - LOGIN */}
                 <div className="login">
-
                     <h1>
                         Welcome back to
                         <br />
@@ -138,9 +133,6 @@ function Login() {
                     </form>
 
                 </div>
-
-
-                {/* RIGHT SIDE - IMAGE */}
                 <div className="login-image-container">
 
                     <img
